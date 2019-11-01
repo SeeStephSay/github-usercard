@@ -113,4 +113,40 @@ function createCard(user) {
 	username.TextContent = user.data.login;
 	//add username p var to info div
 	info.appendChild(username);
+
+	//add user location data as text content to location p var
+	location.textContent = `Location: ${user.data.location}`;
+	//add location p var to info div
+	info.appendChild(location);
+
+	//add text content to profile p var
+	profile.textContent = 'Profile: ';
+	//add user url data to link a var
+	link.href = user.data.html_url;
+	//add user url data as text content to link a var
+	link.textContent = user.data.html_url;
+	//add link a var to profile p var
+	profile.appendChild(link);
+	//add profile p var to info div
+	info.appendChild(profile);
+
+	//add text content to followers p var
+	followers.textContent = `Followers: ${user.data.followers}`;
+	//add followers p var to info div
+	info.appendChild(followers);
+
+	//add text content to following p var
+	following.textContent = `Following: ${user.data.following}`;
+	//add following p var to info div
+	info.appendChild(following);
+
+  //add text content to bio p var
+  bio.textContent = `Bio: ${user.data.bio}`;
+  //add bio p var to info div
+	info.appendChild(bio);
+
+  //add info div to card to card div
+	card.appendChild(info);
+
+	return card;
 }
